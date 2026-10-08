@@ -1,0 +1,24 @@
+node server.js
+curl -v http://localhost:3000/
+
+OUTPUT
+* Host localhost:3000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+*   Trying [::1]:3000...
+* Established connection to localhost (::1 port 3000) from ::1 port 55882 
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/8.18.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-Type: text/plain
+< Date: Thu, 08 Oct 2026 15:13:00 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< Content-Length: 10
+< 
+* Connection #0 to host localhost:3000 left intact
