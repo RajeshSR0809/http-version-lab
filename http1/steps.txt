@@ -22,3 +22,35 @@ OUTPUT
 < Content-Length: 10
 < 
 * Connection #0 to host localhost:3000 left intact
+
+
+
+
+
+
+STAGE 2
+==============
+curl -v http://localhost:3000/
+curl -v http://localhost:3000/
+curl -v http://localhost:3000/
+
+OUTPUT
+[connection] socket=1
+[request] GET / | socket=1
+[close] socket=1
+[connection] socket=2
+[request] GET / | socket=2
+[close] socket=2
+[connection] socket=3
+[request] GET / | socket=3
+[close] socket=3
+
+curl -v http://localhost:3000/ http://localhost:3000/ http://localhost:3000/
+
+OUTPUT
+============
+[connection] socket=4
+[request] GET / | socket=4
+[request] GET / | socket=4
+[request] GET / | socket=4
+[close] socket=4
