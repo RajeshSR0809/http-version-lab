@@ -54,3 +54,20 @@ OUTPUT
 [request] GET / | socket=4
 [request] GET / | socket=4
 [close] socket=4
+
+
+STAGE 3
+time curl http://localhost:3000/slow
+time curl http://localhost:3000/fast
+time curl http://localhost:3000/large
+time curl http://localhost:3000/stream
+
+
+
+time curl http://localhost:3000/slow
+
+immediately in next terminal
+time curl http://localhost:3000/fast
+
+
+time curl http://localhost:3000/slow http://localhost:3000/fast
